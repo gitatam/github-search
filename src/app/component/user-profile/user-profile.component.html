@@ -1,7 +1,11 @@
+<section *ngFor = 'let userRepo of userRepos '>
+  <p> {{userRepo.name}} </p>
+</section>
+
 <aside>
   <h3>Contributor(s)</h3>
   <img style="vertical-align: middle; width: 150px;height: 150px;" src="https://avatars3.githubusercontent.com/u/19833974?v=4" alt="Avatar" class="avatar">
-  <p>{{userProfile.name}}</p>
+  <p>{{ userProfile.name }}</p>
   <p>Biography: {{userProfile.bio}} </p>
-  <p>Member Since:{{userProfile.created_at}} </p>
+  <p>Member Since: {{userProfile.created_at}} </p>
 </aside>

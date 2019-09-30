@@ -19,4 +19,8 @@ export class FetchUserDataService {
     this.gitUser = user;
   }
 
+  getGitRepo() {
+    return this.http.get(`https://api.github.com/users/${this.gitUser}/repos?access_token=${this.accessToken}`);
+  }
+
 }

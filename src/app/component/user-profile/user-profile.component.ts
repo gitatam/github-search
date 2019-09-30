@@ -9,11 +9,15 @@ import { FetchUserDataService } from 'src/app/fetch-user-data.service';
 export class UserProfileComponent implements OnInit {
   userQuery: string;
   userProfile: any;
+  userRepos: any;
 
-  constructor(private service: FetchUserDataService) { 
-    this.service.getUserData().subscribe(response =>{
-      console.log(response);
+  constructor(private service: FetchUserDataService) {
+    this.service.getUserData().subscribe(response => {
       this.userProfile = response;
+    });
+    this.service.getGitRepo().subscribe(repoResponse => {
+      console.log(repoResponse);
+      this.userRepos = repoResponse;
     });
    }
 

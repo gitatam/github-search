@@ -13,11 +13,13 @@
     <div class="row no-gutters">
       <div class="col-12 col-sm-6 col-md-8">
         <section class="m-5">
-          <div *ngFor = 'let userRepo of userRepos '>
-            <p> {{userRepo.name}} </p>
-            <p> {{userRepo.description}} </p>
-            <a href="{{userRepo.html_url}} " target="_blank">See Repo</a>
-          </div>
+            <div *ngFor = 'let userRepo of userRepos' class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{userRepo.name}}</h5>
+                <p class="card-text">{{userRepo.description}}</p>
+                <a href="{{userRepo.html_url}} " target="_blank" class="btn btn-primary">See Repo</a>
+              </div>
+            </div>
         </section>
       </div>
       <div class="col-6 col-md-4">

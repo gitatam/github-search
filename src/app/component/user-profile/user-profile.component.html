@@ -2,10 +2,14 @@
 
 <div class="container" style="margin-top:100px;">
   <div class="row">
-    <section class="col-12 m-0">
+    <section class="col-12">
       <form class="form-inline">
-        <input class="form-control w-75" [(ngModel)]= "userQuery" name="search" type="text" placeholder="Search">
-        <button (click) = 'gitSearch()' >Go</button>
+        <div class="input-group mb-3 w-75">
+            <input class="form-control" [(ngModel)]= "userQuery" name="search" type="text" placeholder="Search">
+            <div class="input-group-append">
+                <button (click) = 'gitSearch()' >Go</button>
+            </div>
+        </div>
       </form>     
     </section>
   </div>
@@ -13,7 +17,7 @@
     <div class="row no-gutters">
       <div class="col-12 col-sm-6 col-md-8">
         <section class="m-5">
-            <div *ngFor = 'let userRepo of userRepos' class="card">
+            <div *ngFor = 'let userRepo of userRepos' class="card mb-3">
               <div class="card-body">
                 <h5 class="card-title">{{userRepo.name}}</h5>
                 <p class="card-text">{{userRepo.description}}</p>

@@ -11,7 +11,10 @@ export class UserProfileComponent implements OnInit {
   userProfile: any;
   userRepos: any;
 
-  constructor(private service: FetchUserDataService) {
+  constructor(private service: FetchUserDataService) {}
+
+   gitSearch() {
+    this.service.updateSearch(this.userQuery);
     this.service.getUserData().subscribe(response => {
       this.userProfile = response;
     });

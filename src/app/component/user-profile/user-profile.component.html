@@ -1,8 +1,8 @@
 <nav>
   <form class="form-inline">
-    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search">
-    <button>Go</button>
-  </form>      
+    <input class="form-control" [(ngModel)]= "userQuery" name="search" type="text" placeholder="Search">
+    <button (click) = 'gitSearch()' >Go</button>
+  </form>     
 </nav>
 
 <section>
@@ -11,9 +11,9 @@
   </div>
 </section>
 
-<aside>
+<aside *ngIf="userProfile">
   <h3>Contributor(s)</h3>
-  <img style="vertical-align: middle; width: 150px;height: 150px;" src="https://avatars3.githubusercontent.com/u/19833974?v=4" alt="Avatar" class="avatar">
+  <img style="vertical-align: middle; width: 150px;height: 150px;" src="{{userProfile.avatar_url}}" alt="Avatar" class="avatar">
   <p>{{ userProfile.name }}</p>
   <p>Biography: {{userProfile.bio}} </p>
   <p>Member Since: {{userProfile.created_at}} </p>

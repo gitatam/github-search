@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './component/user-profile/user-profile.component';
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

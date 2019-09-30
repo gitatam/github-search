@@ -1,27 +1,30 @@
 <div class="container">
-    <nav>
-        <form class="form-inline">
-          <input class="form-control" [(ngModel)]= "userQuery" name="search" type="text" placeholder="Search">
-          <button (click) = 'gitSearch()' >Go</button>
-        </form>     
-      </nav>
+
+  <app-nav-bar></app-nav-bar>
+
+    <section>
+      <form class="form-inline">
+        <input class="form-control" [(ngModel)]= "userQuery" name="search" type="text" placeholder="Search">
+        <button (click) = 'gitSearch()' >Go</button>
+      </form>     
+    </section>
       
-      <div class="row no-gutters">
-        <div class="col-12 col-sm-6 col-md-8">
-            <section>
-                <div *ngFor = 'let userRepo of userRepos '>
-                  <p> {{userRepo.name}} </p>
-                </div>
-              </section>
-        </div>
-        <div class="col-6 col-md-4">
-          <aside *ngIf="userProfile">
-            <h3>Contributor(s)</h3>
-            <img style="vertical-align: middle; width: 150px;height: 150px;" src="{{userProfile.avatar_url}}" alt="Avatar" class="avatar">
-            <p>{{ userProfile.name }}</p>
-            <p>Biography: {{userProfile.bio}} </p>
-            <p>Member Since: {{userProfile.created_at}} </p>
-          </aside>
-        </div>
+    <div class="row no-gutters">
+      <div class="col-12 col-sm-6 col-md-8">
+        <section>
+          <div *ngFor = 'let userRepo of userRepos '>
+            <p> {{userRepo.name}} </p>
+          </div>
+        </section>
       </div>
+      <div class="col-6 col-md-4">
+        <aside *ngIf="userProfile">
+          <h3>Contributor(s)</h3>
+          <img style="vertical-align: middle; width: 150px;height: 150px;" src="{{userProfile.avatar_url}}" alt="Avatar" class="avatar">
+          <p>{{ userProfile.name }}</p>
+          <p>Biography: {{userProfile.bio}} </p>
+          <p>Member Since: {{userProfile.created_at}} </p>
+        </aside>
+      </div>
+    </div>
 </div>
